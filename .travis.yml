@@ -10,6 +10,5 @@ before_script:
 - ./configure --prefix /usr
 script:
 - make
-after_success:
-- make install
+- sudo make install
 - /usr/bin/python3 -m unittest discover -v
