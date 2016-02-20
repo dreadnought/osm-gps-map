@@ -56,3 +56,4 @@ docs/reference/libosmgpsmap.signals
 docs/reference/version.xml
 examples/editable_track
 examples/polygon
+__pycache__/
