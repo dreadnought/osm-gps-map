@@ -11,7 +11,7 @@ class TestOsmGpsMap(unittest.TestCase):
 		self.lat = 50
 		self.lon = 13
 		self.zoom = 15
-		self.osm = OsmGpsMap.Map()
+		self.osm = OsmGpsMap.Map(user_agent="test/0.1")
 		
 	def test_map(self):
 		test_window = Gtk.Window()
@@ -44,6 +44,11 @@ class TestOsmGpsMap(unittest.TestCase):
 		
 		self.osm.set_property("auto-center", False)
 		self.osm.set_property("auto-center", True)
+
+		self.osm.set_property("user-agent", "test/0.2")
+		self.assertEqual(self.osm.get_property("user-agent"), "test/0.2")
+		self.osm.set_property("user-agent", None)
+		self.assertEqual(self.osm.get_property("user-agent"), None)
 		
 		self.osm.gps_add(self.lat, self.lon, heading=OsmGpsMap.MAP_INVALID);
 		track = self.osm.gps_get_track()
