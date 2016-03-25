@@ -13,4 +13,4 @@ before_script:
 script:
 - make
 - sudo make install
-- /usr/bin/python3 -m unittest discover -v
+- /usr/bin/python3 -m unittest discover -v tests/
